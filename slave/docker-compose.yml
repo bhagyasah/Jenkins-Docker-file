@@ -1,0 +1,11 @@
+version: "3"
+services: 
+  jenkins:
+    container_name: slave
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+        - "2222:22"
+    environment:
+      - JENKINS_AGENT_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIttpSjkpBpEcU7LFLtCURDcu46SAZNc123xZA+usDjHwQgpF71phskhwAvNo7Ps0OhET/dd53N5zbtnTNJSqqv42aoPp00ZMkQwT8gK7AusLlY5n4qX5tD5Iv3+YCKvVClqQ/OUsj/HZLlN8ll75bFqt8rE4zQUBuoENvODoKKm2+hUK6LH2YYD4ir035pKP1Pjdqvamgckma9cbOIqQAAY/EtRudriFXCbmN/3jgkqRDeorXL0/HYFamRBfqijMnBLQT6GyptnkTVPT+c+p4Mj8sijFFsmn50yjdOhhMm1LcwMSsPW5R2KJuyJ8gGCClYGbn1GKF4FACCtW7AC4h sawari@Ubuntu18
