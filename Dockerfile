@@ -3,8 +3,9 @@ USER root
 RUN apt-get update -yq \
     && apt-get install curl gnupg -yq \
     && curl -sL https://deb.nodesource.com/setup_14.x | bash \
-    && apt-get install nodejs -yq && \
-    npm install --global yarn
+    && apt-get install nodejs -yq \
+    && apt-get install build-essential \
+    && npm install --global yarn
 USER jenkins
 RUN  node --version && \
     npm --version && \
